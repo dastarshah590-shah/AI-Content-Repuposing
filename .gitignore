@@ -4,3 +4,5 @@ dist
 server/uploads
 server/data/local-store.json
 *.log
+
+.vercel
