@@ -4,10 +4,11 @@ import multer from "multer";
 import { Router } from "express";
 import { env } from "../config/env.js";
 import { uploadFile } from "../controllers/uploadController.js";
+import { resolveRuntimePath } from "../runtimePaths.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const uploadDir = path.resolve(__dirname, "../uploads");
+const uploadDir = resolveRuntimePath(path.resolve(__dirname, "../uploads"), "uploads");
 
 const upload = multer({
   dest: uploadDir,

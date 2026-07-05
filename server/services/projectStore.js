@@ -2,11 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
+import { resolveRuntimePath } from "../runtimePaths.js";
 import { createId } from "../utils/id.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const dataDir = path.resolve(__dirname, "../data");
+const dataDir = resolveRuntimePath(path.resolve(__dirname, "../data"), "data");
 const dataFile = path.join(dataDir, "local-store.json");
 
 export const PLAN_LIMITS = {

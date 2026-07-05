@@ -2,6 +2,9 @@
   "name": "ai-content-repurposing-engine",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -9,7 +12,7 @@
     "client:ai-preview": "vite --config vite.ai-preview.config.cjs --configLoader native",
     "dev:ai-preview": "concurrently \"npm run server\" \"npm run client:ai-preview\"",
     "server": "node --watch server/index.js",
-    "build": "vite build",
+    "build": "vite build --configLoader native",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "start": "node server/index.js",
     "lint": "eslint ."
